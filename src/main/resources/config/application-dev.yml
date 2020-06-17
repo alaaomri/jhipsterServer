@@ -23,9 +23,9 @@ spring:
   profiles:
     active: dev
     include:
-      - swagger
-      # Uncomment to activate TLS for the dev profile
-      #- tls
+    - swagger
+    # Uncomment to activate TLS for the dev profile
+    #- tls
   devtools:
     restart:
       enabled: true
@@ -39,7 +39,7 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:mysql://localhost:3306/jhipsterServer?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
     username: root
-    password:
+    password: admin
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -49,7 +49,15 @@ spring:
         prepStmtCacheSqlLimit: 2048
         useServerPrepStmts: true
   jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
+    properties:
+      hibernate.id.new_generator_mappings: true
+      hibernate.connection.provider_disables_autocommit: true
+      hibernate.cache.use_second_level_cache: true
+      hibernate.cache.use_query_cache: false
+      hibernate.generate_statistics: false
+    database: mysql
   liquibase:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker
