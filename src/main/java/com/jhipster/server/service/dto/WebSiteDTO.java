@@ -17,7 +17,7 @@ public class WebSiteDTO {
     private String url;
 
     @NotBlank
-    private String uerAgent;
+    private String userAgent;
 
     @NotBlank
     private String holdingTag;
@@ -38,7 +38,7 @@ public class WebSiteDTO {
         this.name = webSite.getName();
         this.description = webSite.getDescription();
         this.url = webSite.getUrl();
-        this.uerAgent = webSite.getUerAgent();
+        this.userAgent = webSite.getUserAgent();
         this.holdingTag = webSite.getHoldingTag();
         this.createdBy = webSite.getCreatedBy();
         this.createdDate = webSite.getCreatedDate();
@@ -78,12 +78,12 @@ public class WebSiteDTO {
         this.url = url;
     }
 
-    public String getUerAgent() {
-        return uerAgent;
+    public String getUserAgent() {
+        return userAgent;
     }
 
-    public void setUerAgent(String uerAgent) {
-        this.uerAgent = uerAgent;
+    public void setUserAgent(String userAgent) {
+        this.userAgent = userAgent;
     }
 
     public String getHoldingTag() {

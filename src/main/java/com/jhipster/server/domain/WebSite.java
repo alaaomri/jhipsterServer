@@ -32,7 +32,7 @@ public class WebSite extends AbstractAuditingEntity implements Serializable {
     @NotNull
     @Column(name = "useragent")
     @ColumnDefault("Mozilla/17.0")
-    private String uerAgent;
+    private String userAgent;
 
     @NotNull
     @Column(name = "holdingtag")
@@ -70,12 +70,12 @@ public class WebSite extends AbstractAuditingEntity implements Serializable {
         this.url = url;
     }
 
-    public String getUerAgent() {
-        return uerAgent;
+    public String getUserAgent() {
+        return userAgent;
     }
 
-    public void setUerAgent(String uerAgent) {
-        this.uerAgent = uerAgent;
+    public void setUserAgent(String userAgent) {
+        this.userAgent = userAgent;
     }
 
     public String getHoldingTag() {
