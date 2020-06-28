@@ -48,6 +48,17 @@ public class CacheConfiguration {
             createCache(cm, com.jhipster.server.domain.User.class.getName());
             createCache(cm, com.jhipster.server.domain.Authority.class.getName());
             createCache(cm, com.jhipster.server.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.jhipster.server.domain.Answer.class.getName());
+            createCache(cm, com.jhipster.server.domain.Answer.class.getName() + ".questions");
+            createCache(cm, com.jhipster.server.domain.Customer.class.getName());
+            createCache(cm, com.jhipster.server.domain.Customer.class.getName() + ".quizzes");
+            createCache(cm, com.jhipster.server.domain.Question.class.getName());
+            createCache(cm, com.jhipster.server.domain.Question.class.getName() + ".quizzes");
+            createCache(cm, com.jhipster.server.domain.Question.class.getName() + ".answers");
+            createCache(cm, com.jhipster.server.domain.Quiz.class.getName());
+            createCache(cm, com.jhipster.server.domain.Quiz.class.getName() + ".customers");
+            createCache(cm, com.jhipster.server.domain.Quiz.class.getName() + ".questions");
+            createCache(cm, com.jhipster.server.domain.Subject.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
