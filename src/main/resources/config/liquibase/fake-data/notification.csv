@@ -1,0 +1,4 @@
+id;date;details;sent_date;is_opened;user_id;created_by;last_modified_by
+1;2020-06-29T08:53:03;Pants;2020-06-29T07:56:10;true;1;system;system
+2;2020-06-29T18:01:41;hack port USB;2020-06-29T05:38:11;true;2;system;system
+3;2020-06-29T15:35:35;program copying;2020-06-28T22:45:28;false;3;system;system
