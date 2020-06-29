@@ -38,14 +38,14 @@ public class Notification extends AbstractAuditingEntity implements Serializable
     @Column(name = "is_opened")
     private Boolean isOpened;
 
-    @OneToOne(optional = false)
-    @NotNull
-    @JoinColumn(unique = true)
-    private User user;
-
     @ManyToOne
     @JsonIgnoreProperties(value = "notifications", allowSetters = true)
     private Quiz quiz;
+
+    @ManyToOne(optional = false)
+    @NotNull
+    @JsonIgnoreProperties(value = "notifications", allowSetters = true)
+    private User user;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -108,19 +108,6 @@ public class Notification extends AbstractAuditingEntity implements Serializable
         this.isOpened = isOpened;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public Notification user(User user) {
-        this.user = user;
-        return this;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public Quiz getQuiz() {
         return quiz;
     }
@@ -132,6 +119,19 @@ public class Notification extends AbstractAuditingEntity implements Serializable
 
     public void setQuiz(Quiz quiz) {
         this.quiz = quiz;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public Notification user(User user) {
+        this.user = user;
+        return this;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

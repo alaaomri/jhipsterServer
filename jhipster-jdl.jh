@@ -1,20 +1,20 @@
 entity Answer {
-	code String required
-	answer String required
+    code String required
+    answer String required
 }
 
 entity Subject {
-	code String required
-	subjectName String required
+    code String required
+    subjectName String required
 }
 
 entity Question{
-	code String required
-	question String required
+    code String required
+    question String required
 }
 
 entity Quiz{
-	quizName String required
+    quizName String required
     code String required
     timeBegin Instant required
     timeEnd Instant required
@@ -25,7 +25,7 @@ entity Notification {
     date Instant required
     details String
     sentDate Instant required
-    isOpened Boolean 
+    isOpened Boolean
 }
 
 entity Customer {
@@ -41,24 +41,24 @@ entity Customer {
 
 relationship ManyToMany {
     Customer{quiz(code)} to Quiz {customer(id)}
-    Quiz {question(code)} to Question{quiz(code)}
-    Answer{question(code)} to Question{answer(code)}
-    Quiz{subject(subjectName)} to Subject{quiz(code)}
+Quiz {question(code)} to Question{quiz(code)}
+Answer{question(code)} to Question{answer(code)}
+Quiz{subject(subjectName)} to Subject{quiz(code)}
 }
 
 relationship ManyToOne {
-    
-    Notification{quiz(code)} to Quiz
-   
+
+Notification{quiz(code)} to Quiz
+Notification{user(login) required} to User
 }
 
 relationship OneToOne {
-    Customer{user(login) required} to User
-    Notification{user(login) required} to User
+Customer{user(login) required} to User
+
 }
 
 enum Gender {
-    MALE, FEMALE, OTHER
+MALE, FEMALE, OTHER
 }
 
 paginate all with pagination
@@ -66,4 +66,4 @@ paginate all with pagination
 dto * with mapstruct
 
 // Set service options to all except few
-service all with serviceClass 
+service all with serviceClass

@@ -22,20 +22,19 @@
   ],
   "relationships": [
     {
-      "relationshipType": "one-to-one",
-      "otherEntityName": "user",
-      "otherEntityRelationshipName": "notification",
-      "relationshipValidateRules": "required",
-      "relationshipName": "user",
-      "otherEntityField": "login",
-      "ownerSide": true
-    },
-    {
       "relationshipType": "many-to-one",
       "otherEntityName": "quiz",
       "otherEntityRelationshipName": "notification",
       "relationshipName": "quiz",
       "otherEntityField": "code"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "notification",
+      "relationshipValidateRules": "required",
+      "relationshipName": "user",
+      "otherEntityField": "login"
     }
   ],
   "changelogDate": "20200629185045",

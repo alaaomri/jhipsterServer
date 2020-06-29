@@ -22,13 +22,13 @@ public class NotificationDTO implements Serializable {
     private Boolean isOpened;
 
 
-    private Long userId;
-
-    private String userLogin;
-
     private Long quizId;
 
     private String quizCode;
+
+    private Long userId;
+
+    private String userLogin;
 
     private String createdBy;
 
@@ -111,22 +111,6 @@ public class NotificationDTO implements Serializable {
         this.isOpened = isOpened;
     }
 
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public String getUserLogin() {
-        return userLogin;
-    }
-
-    public void setUserLogin(String userLogin) {
-        this.userLogin = userLogin;
-    }
-
     public Long getQuizId() {
         return quizId;
     }
@@ -141,6 +125,22 @@ public class NotificationDTO implements Serializable {
 
     public void setQuizCode(String quizCode) {
         this.quizCode = quizCode;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public String getUserLogin() {
+        return userLogin;
+    }
+
+    public void setUserLogin(String userLogin) {
+        this.userLogin = userLogin;
     }
 
     @Override
@@ -169,10 +169,10 @@ public class NotificationDTO implements Serializable {
             ", details='" + getDetails() + "'" +
             ", sentDate='" + getSentDate() + "'" +
             ", isOpened='" + isIsOpened() + "'" +
-            ", userId=" + getUserId() +
-            ", userLogin='" + getUserLogin() + "'" +
             ", quizId=" + getQuizId() +
             ", quizCode='" + getQuizCode() + "'" +
+            ", userId=" + getUserId() +
+            ", userLogin='" + getUserLogin() + "'" +
             "}";
     }
 }

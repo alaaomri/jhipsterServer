@@ -28,18 +28,15 @@
             <column name="is_opened" type="boolean">
                 <constraints nullable="true" />
             </column>
-            <column name="user_id" type="bigint">
-                <constraints unique="true" nullable="false" uniqueConstraintName="ux_notification_user_id" />
-            </column>
             <column name="quiz_id" type="bigint">
                 <constraints nullable="true" />
             </column>
-            <column name="created_by" type="varchar(50)">
-                <constraints nullable="false"/>
+            <column name="user_id" type="bigint">
+                <constraints nullable="false" />
             </column>
             <column name="created_date" type="timestamp"/>
-            <column name="reset_date" type="timestamp">
-                <constraints nullable="true"/>
+            <column name="created_by" type="varchar(50)">
+                <constraints nullable="false"/>
             </column>
             <column name="last_modified_by" type="varchar(50)"/>
             <column name="last_modified_date" type="timestamp"/>
