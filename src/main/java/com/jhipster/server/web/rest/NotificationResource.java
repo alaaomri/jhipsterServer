@@ -98,6 +98,13 @@ public class NotificationResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
+    @GetMapping("/notifications/forCurrentUser")
+    public ResponseEntity<List<NotificationDTO>> getNotificationsForCurrentUser(Pageable pageable) {
+        log.debug("REST request to get a page of Notifications");
+        Page<NotificationDTO> page = notificationService.findByCurrentUser(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
     /**
      * {@code GET  /notifications/:id} : get the "id" notification.
      *

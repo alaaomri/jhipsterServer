@@ -2,6 +2,8 @@ package com.jhipster.server.repository;
 
 import com.jhipster.server.domain.Notification;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 
@@ -15,5 +17,5 @@ import java.util.List;
 public interface NotificationRepository extends JpaRepository<Notification, Long> {
 
     @Query("select notification from Notification notification where notification.user.login = ?#{principal.username}")
-    List<Notification> findByUserIsCurrentUser();
+    Page<Notification> findByUserIsCurrentUser(Pageable pageable);
 }
